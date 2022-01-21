@@ -380,6 +380,18 @@ To check on the status of your validator:
 agd status | jq .ValidatorInfo
 ```
 
+## Delegating to a Validator
+
+To delegate your tokens you should use Operator Address:
+
+```sh
+# Replace <operator-address> with agoricvaloper1 address of a Validator you want to delegate BLD tokens
+# Replace <amount> with the amount you prefer to delegate
+# You could also replace $chainName with CURRENT git branch e.g agoricdev-7
+agd tx staking delegate <operator-address> <amount>ubld --chain-id=$chainName --gas=auto --from=<your-key-name>
+# Enter your keyring passphrase confirm transaction
+```
+
 # Next steps
 
 After you have completed this guide, your validator should be up and ready to receive delegations. Note that only the top 100 validators by weighted stake (self-delegations + other delegations) are eligible for block rewards. To view the current validator list, check out an Agoric block explorer (in the [Network Status section](#Network-Status)).
